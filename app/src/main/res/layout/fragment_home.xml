@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Un layout est une page sur laquelle on va mettre des composants-->
+<!--Ici c'est un layout de type LinearLayout pour pouvoir afficher des images en ligne-->
+<!--Ce fragment est une partie de page, il sera rassemblé avec d'autres fragments dans le package "fragments" -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Permet de boucler pour afficher nos plantes, une plante se trouve dans une vue, on boucle plusieurs vues-->
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/horizontal_recycler_view"
+       android:layout_width="match_parent"
+       android:layout_height="250dp"
+       android:orientation="horizontal"
+       app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+       />
+
+    <!--Affiche la phrase "dernières plantes"-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home_page_last_plant_section"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginLeft="@dimen/default_margin"
+        style="@style/SubtitleTextStyle"
+        />
+
+<!--    Liste d'items verticaux-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/vertical_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginLeft="@dimen/default_margin"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
+</LinearLayout>
